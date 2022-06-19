@@ -5,6 +5,33 @@ from bs4 import BeautifulSoup
 from selenium.webdriver import FirefoxOptions
 
 def extract_hospital(html, browser, index):
+    #-------------------------------
+    try:
+        path = '//*[@id="_list_scroll_container"]/div/div/div[2]/ul/li[{0}]/div[2]/div/div/span[2]/a/span[2]/*[local-name()="svg"]'.format(index)
+        moreInfo = browser.find_element_by_xpath(path)
+        moreInfo.click()
+        time.sleep(0.5)
+        # 아무래도 주소값은 셀레니움으로 긁어와야 할듯 하다
+        temp = BeautifulSoup(browser.page_source, 'html.parser')
+        address = temp.find("span", class_="_1sG9K").next_sibling.get_text()
+        moreInfo.click()
+    except:
+        address = "No information!"
+    #-------------------------------
+    try:
+        location = address
+        url = f"https://dapi.kakao.com/v2/local/search/address.json?query={location}"
+        kakao_key = "8d7127274d16ab32508bc7b4936be2d4" # 보안주의~
+        result = requests.get(url, headers={"Authorization":f"KakaoAK {kakao_key}"})
+        json_obj = result.json()
+        x = json_obj['documents'][0]['x']
+        y = json_obj['documents'][0]['y']
+        # print(x,y)
+        x, y = str(x), str(y)
+        temp = [x,y]
+    except:
+        return
+    #-------------------------------
     # 거리
     distance = html.select("div._3fqfH > span")[0].text
     # 병원 이름
