@@ -20,3 +20,14 @@ final_url = f"https://m.place.naver.com/hospital/list?x={x}&y={y}&query={word}"
 # browser.get(final_url)
 browser = webdriver.Chrome("./chromedriver.exe")
 browser.get(final_url)
+# 목록보기 클릭
+button = browser.find_element_by_class_name("_31ySW ")
+button.click()
+# 관련도순 클릭
+time.sleep(1)
+filter = browser.find_element_by_xpath('//*[@id="_list_scroll_container"]/div/div/div[1]/div/div/div/div/div/div/span[1]/a')
+filter.click()
+# 거리순으로 변경
+time.sleep(1)
+short_way = browser.find_element_by_xpath('//*[@id="_list_scroll_container"]/div/div/div[1]/div/div/div[2]/div/ul/li[2]/a')
+short_way.click()
