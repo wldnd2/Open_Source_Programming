@@ -60,11 +60,45 @@
                 </li>
             </ul>
         </div>
+        <div class="contents">
+            <!-- 홈 -->
+            <div class="showBox active", id="home">
+            </div>
+            <!-- 팀 -->
+            <div class="showBox" id="team">
+            </div>
+            <!-- 프로젝트 -->
+            <div class="showBox" id="project">
+                <form method="POST" action="/project_2">
+                    부위 <input name="part" type="text">
+                    증상 <input name="sym" type="text">
+                    <input type="submit" name="send" value="Send" > <br>
+                </form>
+            </div>
+            <!-- 연락처 -->
+            <div class="showBox" id="contact">
+            </div>
+        </div>     
     </div>
     <!-- incon js -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <!-- main js -->
+    <script>
+        let list = document.querySelectorAll('.list');
+        let list2 = document.querySelectorAll('.showBox');
+        for (let i = 0; i < list.length; i++) {
+            list[i].onclick = function () {
+                let j = 0;
+                while (j < list.length) {
+                    list[j].className = 'list';
+                    list2[j++].className = 'showBox';
+                }
+                list[i].className = 'list active';
+                list2[i].className = 'showBox active';
+            }
+        }
+    </script>
 </body>
 </html>
