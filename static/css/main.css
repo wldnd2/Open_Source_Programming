@@ -398,3 +398,85 @@ body {
 .showBox.active{
     display:block;
 }
+
+/* 메인 화면 홈 css - contents */
+#home{
+    width: 100%;
+    height: 100%;
+}
+
+#home .circle{
+    background: #7e88f4;
+    position: absolute;
+    right: -80px;
+    top: -350px;
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+}
+
+#home .mainIMG{
+    position: absolute;
+    bottom: 30px;
+    right: 410px;
+    width: 400px;
+    height: 400px;
+}
+
+#home .home-contents{
+    position: relative;
+    top: 20px;
+    left: 50px;
+    width: 83%;
+    height: 90%;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    /* glassmorphism */
+    background: rgba( 255, 255, 255, 0.08 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: 15px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#home .home-contents h2{
+    font-size: 4rem;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+#home .home-contents h2::before{
+    transition: all .5s;
+    content: "";
+    position: absolute;
+    top: 230px;
+    left: 40px;
+    width: 430px;
+    height: 3px;
+    background: #000;
+    opacity: 0;
+}
+
+#home .home-contents:hover h2::before{
+    opacity: 1;
+}
+
+#home .home-contents .description{
+    font-size: 1.8rem;
+    margin-bottom: 50px;
+}
+
+#home .home-contents .site {
+    font-size: 1.2rem;
+}
+
+#home .home-contents .site a{
+    text-decoration: none;
+    color: #5b67eb;
+}
+
