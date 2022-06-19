@@ -4,6 +4,23 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 from selenium.webdriver import FirefoxOptions
 
+def extract_hospital(html, browser, index):
+    # 거리
+    distance = html.select("div._3fqfH > span")[0].text
+    # 병원 이름
+    title = html.select("div.nfZUc > span")[0].text
+    # 영업시간
+    try:
+        when = html.find("span", class_="_2P75l").next_sibling.get_text()
+        if "블로그" in when:
+            when = "정보가 없어요"
+    except:
+        # when = "ERROR!!!!"
+        when = "정보가 없어요"
+    finally:
+        result = [distance, title, when, address, temp]
+        return result
+
 location = "대구 북구 대학로 143"
 url = f"https://dapi.kakao.com/v2/local/search/address.json?query={location}"
 kakao_key = "8d7127274d16ab32508bc7b4936be2d4" # 보안주의~
@@ -31,3 +48,19 @@ filter.click()
 time.sleep(1)
 short_way = browser.find_element_by_xpath('//*[@id="_list_scroll_container"]/div/div/div[1]/div/div/div[2]/div/ul/li[2]/a')
 short_way.click()
+# 크롤링 시작!!
+time.sleep(1)
+inf = []
+soup = BeautifulSoup(browser.page_source, 'html.parser')
+hospitals = soup.find_all("li", class_="_2JXhh")
+# print(hospitals)
+# print(len(hospitals)) # 50개니까 완전 충분함  
+index = 1
+for hospital in hospitals:
+    information = extract_hospital(hospital, browser, index)
+    if information is not None:
+        inf.append(information)
+    if index > 2:
+        break
+    index += 1
+browser.quit()
