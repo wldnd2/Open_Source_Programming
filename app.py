@@ -2,7 +2,6 @@
 #-*- coding: utf-8 -*-
 
 from re import template
-from api import map #api 폴더에 있는 map.py 파일 가져온거
 from api import mapCrawling, reviewCrawling
 from symptomCrawling import *
 import random
