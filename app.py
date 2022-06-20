@@ -1,6 +1,7 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
 
+from importlib.resources import path
 from re import template
 from api import mapCrawling
 from symptomCrawling import *
@@ -9,8 +10,8 @@ from bs4 import BeautifulSoup
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
-app.register_blueprint(map.bp,url_prefix='/map') #map.py에 있는 bp를 /map 뒤에 등록한다.
-#app.register_blueprint(calc.bp)#꼬리표 없으니까 실행했을때 첨으로 켜짐
+# app.register_blueprint(map.bp,url_prefix='/map') #map.py에 있는 bp를 /map 뒤에 등록한다.
+# app.register_blueprint(calc.bp)#꼬리표 없으니까 실행했을때 첨으로 켜짐
 #너무 복잡해질까봐 빼놓은거
 
 @app.route('/', methods=['GET'])
@@ -36,8 +37,9 @@ def result():
     elif part=="팔":
         Diction = arm_symptoms(sym)
     elif part=="다리":
-    	Diction = leg_symptoms(sym)
-
+        Diction = leg_symptoms(sym)
+    else:
+        pass
     Diction = {'알코올성 간질환(Alcoholic liver disease)': ['소화기내과'],'간질환(Alcoholic liver disease)': ['소화기내과'],'알코올성 간질환(Alcoholic liver disease)': ['소화기내과']}
     r = []
     index = 0
