@@ -399,7 +399,7 @@ def arm_symptoms(symptom):
     
 
 
-def back_symtoms(symptom):
+def back_symptoms(symptom):
     url = "https://www.amc.seoul.kr/asan/healthinfo/symptom/symptomSubmain.do?partId=B000006"
     res = requests.get(url)
     soup = BeautifulSoup(res.content, "html.parser")
