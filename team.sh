@@ -29,7 +29,6 @@ cd
 cd Open_Source_Programming
 
 gnome-terminal -e ./execute.sh
-chmod 700 geckodriver
 chmod +x app.py
 python3 app.py
 
