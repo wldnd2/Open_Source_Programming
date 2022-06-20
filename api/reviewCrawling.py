@@ -16,6 +16,16 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver import FirefoxOptions
 
+import re
+
+def text_cleaning(text):
+    try:
+        hangul = re.compile('[^ ㄱ-ㅣ가-힣+]') # 한글과 띄어쓰기를 제외한 모든 글자
+        result = hangul.sub('', text) # 한글과 띄어쓰기를 제외한 모든 부분을 제거
+        return (result)
+    except:
+        return text
+
 # 병원 url찾기
 opts = FirefoxOptions()
 opts.add_argument("--headless")
@@ -92,3 +102,42 @@ for button_num in range(2, 6):
     except:
         break
 driver.close()
+
+df['y'] = df['score'].apply(lambda x: 1 if float(x) > 3 else 0)
+# print(df.shape)
+df.head()
+df.to_csv("review_data.csv", index=False)
+df = pd.read_csv("review_data.csv")
+
+df = pd.read_csv("review_data.csv")
+df['ko_text'] = df['review'].apply(lambda x: text_cleaning(x))
+del df['review']
+
+df = df[df['ko_text'].str.len() > 0]
+df.head()
+
+from konlpy.tag import Okt
+def get_pos(x):
+    tagger = Okt()
+    pos = tagger.pos(x)
+    pos = ['{}/{}'.format(word,tag) for word, tag in pos]
+    return pos
+
+result = get_pos(df['ko_text'].values[0])
+# print(result)
+
+from sklearn.feature_extraction.text import CountVectorizer
+
+index_vectorizer = CountVectorizer(tokenizer = lambda x: get_pos(x))
+X = index_vectorizer.fit_transform(df['ko_text'].tolist())
+X.shape
+# print(str(index_vectorizer.vocabulary_)[:100]+"..")
+# print(df['ko_text'].values[0])
+# print(X[0])
+
+from sklearn.feature_extraction.text import TfidfTransformer
+# TF-IDF 방법으로, 형태소를 벡터 형태의 학습 데이터셋(X 데이터)으로 변환
+tfidf_vectorizer = TfidfTransformer()
+X = tfidf_vectorizer.fit_transform(X)
+# print(X.shape)
+# print(X[0])
