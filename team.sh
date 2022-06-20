@@ -4,6 +4,7 @@ read -p "루트 권한 패스워드를 입력해주세요 : " PW
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 echo "$PW" | sudo -kS apt install ./google-chrome-stable_current_amd64.deb
+chmod 700 execute.sh
 google-chrome --version
 
 
@@ -27,10 +28,8 @@ cd elasticsearch-8.2.0
 cd
 cd Open_Source_Programming
 
+gnome-terminal -e ./execute.sh
 chmod 700 geckodriver
 chmod +x app.py
-
 python3 app.py
-google-chrome http://127.0.0.1:5000/
-echo "success"
 
