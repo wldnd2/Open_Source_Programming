@@ -3,7 +3,7 @@
 
 from re import template
 from api import mapCrawling
-from symptoms_module import *
+from symptomCrawling import *
 import random
 from bs4 import BeautifulSoup
 from flask import Flask, render_template, request
@@ -22,19 +22,19 @@ def result():
     part = request.form['part']
     sym = request.form['sym']
     if part=="배":
-    	Diction = stomach_symptoms(sym)
+        Diction = stomach_symptoms(sym)
     elif part=="머리":
-    	Diction = head_symptoms(sym)
+        Diction = head_symptoms(sym)
     elif part=="목":
-    	Diction = neck_symptoms(sym)
+        Diction = neck_symptoms(sym)
     elif part=="가슴":
-    	Diction = chest_symptoms(sym)
+        Diction = chest_symptoms(sym)
     elif part=="등":
-    	Diction = back_symptoms(sym)
+        Diction = back_symptoms(sym)
     elif part=="엉덩이":
-    	Diction = hip_symptoms(sym)
+        Diction = hip_symptoms(sym)
     elif part=="팔":
-    	Diction = arm_symptoms(sym)
+        Diction = arm_symptoms(sym)
     elif part=="다리":
     	Diction = leg_symptoms(sym)
 
