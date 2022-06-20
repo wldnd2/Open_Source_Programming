@@ -29,5 +29,7 @@ cd Open_Source_Programming
 
 chmod 700 geckodriver
 chmod +x app.py
-python3 app.py
+
 google-chrome http://127.0.0.1:5000/
+python3 app.py
+
