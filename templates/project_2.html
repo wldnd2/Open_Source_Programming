@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OSP_project</title>
     <link rel="stylesheet" href="../static/css/main.css">
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <!-- <script type="text/javascript" src="vendor/jquery/jquery.js"></script> -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -59,16 +62,87 @@
                     </a>
                 </li>
             </ul>
-        </div> 
+        </div>
         <!-- contents -->
         <div class="contents">
-        </div> 
+            <h2>증상명에 따른 진료과가 같아 같은 병원이 여러개 나올 수 도 있습니다.</h2>
+            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey={{kakao_key}}"></script>            <div class="showBox active">
+                <script>
+                    var temp = [];
+                    {% for i in XY %}
+                        {% for j in i %}
+                            var t = [ '{{j[0]}}', {{j[1]}},{{j[2]}} ];
+                            temp.push(t);
+                        {% endfor %}
+                    {% endfor %}
+                    var hospInfo = [];
+                    {% for i in hospInfo %}
+                        var t = ['{{i[0]}}', '{{i[1]}}','{{i[2]}}','{{i[3]}}'];
+                        hospInfo.push(t);
+                        console.log(hospInfo);
+                    {% endfor %}
+                    var word = [];
+                </script>
+                {% for key, value in contents.items() %}
+                <li> {{key}}: {{value}} </li>
+                <div class="map-info{{key[0]}}">
+                    <div id="map" style="display:block;width:200px;height:100px;"></div>
+                    <div class="hos-info{{key[0]}}">
+                    </div>
+                </div>
+                <br>
+                <script>
+                    var t = '{{key}}'
+                    word.push('{{key[0]}}');
+                    for (var i = 0; i<temp.length; i++){
+                        console.log(i, t, temp[i]);
+                        if (t == temp[i][0]){
+                            var container = document.getElementById('map');
+                            var options = {
+                                center: new kakao.maps.LatLng(temp[i][2], temp[i][1]),
+                                level: 3
+                            };
+                            var map = new kakao.maps.Map(container, options);
+                            var markerPosition  = new kakao.maps.LatLng(temp[i][2], temp[i][1]);
+                            var marker = new kakao.maps.Marker({position: markerPosition});
+                            marker.setMap(map);
+                            var str = "map" + i;
+                            container.setAttribute("id", str);
+                        }
+                    }
+                </script>
+                {% endfor %}
+                <script>
+                    console.log(word);
+                    for (var i = 0; i < word.length; i++) {
+                        var str = ".hos-info" + word[i];
+                        let htmlData =
+                                "<ul>" +
+                                "<li> 거리: " +
+                                hospInfo[i][0] +
+                                "</li>" +
+                                "<li> 이름: " +
+                                hospInfo[i][1] +
+                                "</li>" +
+                                "<li> 영업 시간: " +
+                                hospInfo[i][2] +
+                                "</li>" +
+                                "<li> 주소: " +
+                                hospInfo[i][3] +
+                                "</li>" +
+                                "</ul>";
+                        console.log(htmlData);
+                        console.log(str);
+                        $(str).append(htmlData);
+                    }
+                </script>
+            </div>
+        </div>
     </div>
     <!-- incon js -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <!-- main js -->
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script>
         let list = document.querySelectorAll('.list');
         for (let i = 0; i < list.length; i++) {
