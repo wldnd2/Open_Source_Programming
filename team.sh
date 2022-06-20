@@ -17,4 +17,4 @@ cd Open_Source_Programming
 
 chmod 700 geckodriver
 chmod +x app.py
-python3 app.py
+python app.py
