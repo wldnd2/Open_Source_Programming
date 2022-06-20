@@ -20,6 +20,7 @@ pip3 install Blueprint
 pip3 install selenium
 pip3 install seaborn
 pip3 install sklearn
+pip3 install tkinter
 
 cd
 cd elasticsearch-8.2.0
@@ -30,6 +31,7 @@ cd Open_Source_Programming
 chmod 700 geckodriver
 chmod +x app.py
 
-google-chrome http://127.0.0.1:5000/
 python3 app.py
+google-chrome http://127.0.0.1:5000/
+echo "success"
 
