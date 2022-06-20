@@ -28,13 +28,12 @@ def text_cleaning(text):
 
 def reviewAnalysis(hospName):
  # hospName = "최병원"
-    opts = FirefoxOptions()
-    opts.add_argument("--headless")
-    driver = webdriver.Firefox(firefox_options=opts, executable_path = r'./geckodriver')
+    # opts = FirefoxOptions()
+    # opts.add_argument("--headless")
+    # driver = webdriver.Firefox(firefox_options=opts, executable_path = r'./geckodriver')
 
     # browser.get(final_url)
-    # driver = webdriver.Chrome("./chromedriver.exe")
-
+    driver = webdriver.Chrome("./chromedriver.exe")
     source_url = "https://map.kakao.com/"
     driver.get(source_url)
 
@@ -69,10 +68,10 @@ def reviewAnalysis(hospName):
     columns = ['score', 'review']
     df = pd.DataFrame(columns=columns)
 
-    # driver = webdriver.Chrome(path)  # for Mac
-    opts = FirefoxOptions()
-    opts.add_argument("--headless")
-    driver = webdriver.Firefox(firefox_options=opts, executable_path = r'./geckodriver')
+    driver = webdriver.Chrome("./chromedriver.exe")  # for Mac
+    # opts = FirefoxOptions()
+    # opts.add_argument("--headless")
+    # driver = webdriver.Firefox(firefox_options=opts, executable_path = r'./geckodriver')
     page_url = page_urls[0]
         
     # 상세보기 페이지에 접속합니다
@@ -293,3 +292,4 @@ def reviewAnalysis(hospName):
         p.append(sentence)
         n.append(sentence)
         return p, n
+reviewAnalysis("최병원")

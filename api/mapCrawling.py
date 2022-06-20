@@ -60,12 +60,12 @@ def Crawler(hostType):
     # print(y, x)
     word = hostType
     final_url = f"https://m.place.naver.com/hospital/list?x={x}&y={y}&query={word}"
-    opts = FirefoxOptions()
-    opts.add_argument("--headless")
-    browser = webdriver.Firefox(firefox_options=opts, executable_path = r'./geckodriver')
-    browser.get(final_url)
-    # browser = webdriver.Chrome("./chromedriver.exe")
+    # opts = FirefoxOptions()
+    # opts.add_argument("--headless")
+    # browser = webdriver.Firefox(firefox_options=opts, executable_path = r'./geckodriver')
     # browser.get(final_url)
+    browser = webdriver.Chrome("./chromedriver.exe")
+    browser.get(final_url)
     # 목록보기 클릭
     button = browser.find_element_by_class_name("_31ySW ")
     button.click()
