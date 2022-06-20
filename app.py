@@ -38,61 +38,9 @@ def result():
     elif part=="다리":
     	Diction = leg_symptoms(sym)
 
-    Diction = {'알코올성 간질환(Alcoholic liver disease)': ['소화기내과'],'간질환(Alcoholic liver disease)': ['소화기내과'],'알코올성 간질환(Alcoholic liver disease)': ['소화기내과']}
-    r = []
-    index = 0
-    sym = []
-    # 삭제한 키값 리스트
-    removeKey = []
-    # 랜덤 인덱스 값
-    rndIndex = []
-    # 결과로 나온 증상들의 지도 결과 값을 받는다.
-    for key, value in Diction.items():
-        try:
-            rnd = random.randrange(1,4)
-            try:
-                temp = [key, list(Diction.values())[index][rnd]]
-            except:
-                rnd = 0
-                temp = [key, list(Diction.values())[index][rnd]]
-            crawResult = mapCrawling.Crawler(temp[1])
-            index += 1
-            if len(crawResult) != 0:
-                rndIndex.append(rnd)
-                sym.append(key)
-                r.append(crawResult)
-            else:
-                removeKey.append(key)
-                continue
-        except:
-            return render_template('project1.html')
-    # 결과값 없는 Diction 정리
-    for i in range(len(removeKey)):
-        del Diction[removeKey[i]]
-    # 병원 정보 정리
-    hospInformations = []
-    # 받아온 지도 결과 값 출력
-    for i in range(len(r)):
-        hospInformations.append(r[i][rndIndex[i]][:4])
-        print(hospInformations[i])
-    # 증상, 경도, 위도 넣는 리스트
-    temp_map = []
-    for row in range(len(r)):
-        i = 0
-        xy = []
-        for col in range(len(r[row])):
-            xy.append([sym[row], r[row][col][4][0], r[row][col][4][1]])
-            i += 1
-            if i > 0:
-                break
-        print("xy: ", xy)
-        temp_map.append(xy)
-    # return 값 리스트
-    # Diction - 예상증상
-    # XY - 병원 위도, 경도
-    # hospInformations - 병원 위치 정보들
+    
     kakao_key = "97c23c3cc66e3885bde6a88ecdcbd7be"
-    return render_template('project_2.html', kakao_key = kakao_key, contents=Diction , XY = temp_map, hospInfo=hospInformations)
+    return render_template('project_2.html', kakao_key = kakao_key, contents=Diction)
 
 if __name__ == '__main__':
     app.run(host = "127.0.0.1:5000")
