@@ -1,4 +1,5 @@
 import time
+from tkinter import BROWSE
 import requests
 from selenium import webdriver
 from bs4 import BeautifulSoup
@@ -64,7 +65,9 @@ def Crawler(hostType):
     # opts.add_argument("--headless")
     # browser = webdriver.Firefox(firefox_options=opts, executable_path = r'./geckodriver')
     # browser.get(final_url)
-    browser = webdriver.Chrome("./chromedriver.exe")
+    options = webdriver.ChromeOptions()
+    options.add_argument("headless")
+    browser = webdriver.Chrome("./chromedriver.exe", chrome_options= options)
     browser.get(final_url)
     # 목록보기 클릭
     button = browser.find_element_by_class_name("_31ySW ")

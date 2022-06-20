@@ -10,7 +10,7 @@ from flask import Flask, render_template, request
 
 
 app = Flask(__name__)
-app.register_blueprint(map.bp,url_prefix='/map') #map.py에 있는 bp를 /map 뒤에 등록한다.
+# app.register_blueprint(map.bp,url_prefix='/map') #map.py에 있는 bp를 /map 뒤에 등록한다.
 #app.register_blueprint(calc.bp)#꼬리표 없으니까 실행했을때 첨으로 켜짐
 #너무 복잡해질까봐 빼놓은거
 
