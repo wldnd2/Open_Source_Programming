@@ -20,7 +20,6 @@ pip3 install Blueprint
 pip3 install selenium
 pip3 install seaborn
 pip3 install sklearn
-pip3 install tkinter
 
 cd
 cd elasticsearch-8.2.0
