@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSP_project</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+</head>
+<body>
+    <div class="container">
+        <!-- side menu items -->
+        <div class="navigation">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="../static/images/logo.jpg" alt="">
+                    <h2>CSE</h2>
+                </a>
+            </div>
+            <ul>
+                <li class="list">
+                    <b></b>
+                    <b></b>
+                    <a href="/">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <b></b>
+                    <b></b>
+                    <a href="/">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Team</span>
+                    </a>
+                </li>
+                <li class="list active">
+                    <b></b>
+                    <b></b>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="analytics-outline"></ion-icon>
+                        </span>
+                        <span class="title">Project</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <b></b>
+                    <b></b>
+                    <a href="/">
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>                    
+                        </span>
+                        <span class="title">Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </div> 
+        <!-- contents -->
+        <div class="contents">
+            <a href="/">
+                <button>홈</button>
+            </a>
+        </div> 
+    </div>
+    <!-- incon js -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- main js -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        let list = document.querySelectorAll('.list');
+        for (let i = 0; i < list.length; i++) {
+            list[i].onclick = function () {
+                let j = 0;
+                while (j < list.length) {
+                    list[j++].className = 'list';
+                }
+                list[i].className = 'list active';
+            }
+        }
+    </script>
+</body>
+</html>
