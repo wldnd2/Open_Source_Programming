@@ -3,8 +3,8 @@
 
 from re import template
 from api import map #api 폴더에 있는 map.py 파일 가져온거
-from api import mapCrawling, kakaoMap
-from symptoms_module import *
+from api import mapCrawling, reviewCrawling
+from symptomCrawling import *
 import random
 from bs4 import BeautifulSoup
 from flask import Flask, render_template, request
@@ -82,7 +82,7 @@ def result():
 	n = []
 	try:
 		for i in range(len(r)):
-			tempP, tempN = kakaoMap.reviewAnalysis(hospInformations[i][1])
+			tempP, tempN = reviewCrawling.reviewAnalysis(hospInformations[i][1])
 			print(tempP, tempN)
 			p.append(tempP)
 			n.append(tempN)
