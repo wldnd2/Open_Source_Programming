@@ -18,6 +18,8 @@ pip3 install pandas
 pip3 install matplotlib
 pip3 install Blueprint
 pip3 install selenium
+pip3 install seaborn
+pip3 install sklearn
 
 cd
 cd elasticsearch-8.2.0
