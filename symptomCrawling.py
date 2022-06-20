@@ -403,7 +403,8 @@ def back_symptoms(symptom):
     url = "https://www.amc.seoul.kr/asan/healthinfo/symptom/symptomSubmain.do?partId=B000006"
     res = requests.get(url)
     soup = BeautifulSoup(res.content, "html.parser")
-    #find and store symptom_defurls
+
+    #find and store symptom_def_urls
     symptom_link_data=soup.find("div", {"class":"searchCont"}).find_all('a')
     symptom_def_urls=[]
     for i in range(len(symptom_link_data)):
