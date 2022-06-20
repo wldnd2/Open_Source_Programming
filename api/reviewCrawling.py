@@ -141,3 +141,77 @@ tfidf_vectorizer = TfidfTransformer()
 X = tfidf_vectorizer.fit_transform(X)
 # print(X.shape)
 # print(X[0])
+
+
+# 긍정, 부정 리뷰 분류하기
+from sklearn.model_selection import train_test_split
+
+y = df['y']
+x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.30)
+# print(x_train.shape)
+# print(x_test.shape)
+
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+
+# 로지스틱 회귀모델 학습
+lr = LogisticRegression(random_state=0)
+lr.fit(x_train, y_train)
+y_pred = lr.predict(x_test)
+y_pred_probability = lr.predict_proba(x_test)[:,1]
+
+# 로지스틱 회귀모델의 성능 평가
+# print("accuracy: %.2f" % accuracy_score(y_test, y_pred))
+# print("Precision : %.3f" % precision_score(y_test, y_pred))
+# print("Recall : %.3f" % recall_score(y_test, y_pred))
+# print("F1 : %.3f" % f1_score(y_test, y_pred))
+
+from sklearn.metrics import confusion_matrix
+
+confmat = confusion_matrix(y_true=y_test, y_pred=y_pred)
+# print(confmat)
+
+
+# 그래프 출력
+from sklearn.metrics import roc_curve, roc_auc_score
+
+# AUC계산
+false_positive_rate, true_positive_rate, thresholds = roc_curve(y_test, y_pred_probability)
+roc_auc = roc_auc_score(y_test, y_pred_probability)
+# print("AUC : %.3f" % roc_auc)
+
+# ROC curve 그래프 출력
+plt.rcParams['figure.figsize'] = [5, 4]
+plt.plot(false_positive_rate, true_positive_rate, label='ROC curve (area = %0.3f)' % roc_auc, 
+         color='red', linewidth=4.0)
+plt.plot([0, 1], [0, 1], 'k--')
+plt.xlim([0.0, 1.0])
+plt.ylim([0.0, 1.0])
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('ROC curve of Logistic regression')
+plt.legend(loc="lower right")
+
+# 학습한 회귀 모델 계수출력.
+plt.rcParams['figure.figsize'] = [10, 8]
+plt.bar(range(len(lr.coef_[0])), lr.coef_[0])
+
+print(sorted(((value, index) for index, value in enumerate(lr.coef_[0])), reverse=True)[:5])
+print(sorted(((value, index) for index, value in enumerate(lr.coef_[0])), reverse=True)[-5:])
+
+# 회귀 모델의 계수를 높은 순 정렬 
+coef_pos_index = sorted(((value, index) for index, value in enumerate(lr.coef_[0])), reverse=True)
+
+# 회귀 모델의 계수를 index_vectorizer에 맵핑 -> 어떤 형태소인지 출력
+invert_index_vectorizer = {v: k for k, v in index_vectorizer.vocabulary_.items()}
+
+# 계수가 높은 순으로, 피처에 형태소를 맵핑한 결과를 출력
+# 계수가 높은 피처는 리뷰에 긍정적인 영향을 주는 형태소
+print(str(invert_index_vectorizer)[:100]+'..')
+
+# 상위 20개 긍정 형태소 출력
+for coef in coef_pos_index[:20]:
+    print(invert_index_vectorizer[coef[1]], coef[0])
+# 상위 20개 부정 형태소 출력
+for coef in coef_pos_index[-20:]:
+    print(invert_index_vectorizer[coef[1]], coef[0])
