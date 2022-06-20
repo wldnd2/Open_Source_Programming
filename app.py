@@ -40,7 +40,7 @@ def result():
         Diction = leg_symptoms(sym)
     else:
         pass
-    Diction = {'알코올성 간질환(Alcoholic liver disease)': ['소화기내과'],'간질환(Alcoholic liver disease)': ['소화기내과'],'알코올성 간질환(Alcoholic liver disease)': ['소화기내과']}
+    # Diction = {'알코올성 간질환(Alcoholic liver disease)': ['소화기내과'],'간질환(Alcoholic liver disease)': ['소화기내과'],'알코올성 간질환(Alcoholic liver disease)': ['소화기내과']}
     r = []
     index = 0
     sym = []
