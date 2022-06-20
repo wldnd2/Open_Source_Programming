@@ -58,10 +58,10 @@ y = json_obj['documents'][0]['y']
 # word = hostType
 word = "정형외과"
 final_url = f"https://m.place.naver.com/hospital/list?x={x}&y={y}&query={word}"
- opts = FirefoxOptions()
- opts.add_argument("--headless")
- browser = webdriver.Firefox(firefox_options=opts, executable_path = r'./geckodriver')
- browser.get(final_url)
+opts = FirefoxOptions()
+opts.add_argument("--headless")
+browser = webdriver.Firefox(firefox_options=opts, executable_path = r'./geckodriver')
+browser.get(final_url)
 #browser = webdriver.Chrome("./chromedriver.exe")
 #browser.get(final_url)
 # 목록보기 클릭
