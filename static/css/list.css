@@ -1,0 +1,129 @@
+#project {
+    width: 100%;
+    height: 100%;
+}
+
+#project .circle{
+    background: #7e88f4;
+    position: absolute;
+    right: -80px;
+    top: -350px;
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+}
+
+#project .sick-contents{
+    position: relative;
+    top: 20px;
+    left: 50px;
+    width: 83%;
+    height: 65%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;
+    overflow-y: scroll;
+    /* glassmorphism */
+    background: rgba( 255, 255, 255, 0.08 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: 15px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#project .sick-contents::-webkit-scrollbar{
+    width: 10px;
+}
+
+#project .sick-contents ul{
+    position: relative;
+    width: 60%;
+    margin: 10px 10px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    list-style: none;
+    font-size: 1rem;
+    /* glassmorphism */
+    background: rgba( 255, 255, 255, 0.08 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: 15px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#project .sick-contents ul h2{
+    font-weight: 50;
+    font-size: 1.9rem;
+    border-bottom: 1px solid #000;
+    margin-bottom: 15px;
+}
+
+#project .sick-contents ul li{
+    position: relative;
+    margin: 5px 0;
+}
+
+#project form{
+    padding: 20px 30px;
+    position: absolute;
+    bottom: 15%;
+    right: 35%;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* glassmorphism */
+    background: rgba( 255, 255, 255, 0.08 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: 15px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );  
+}
+
+#project form .a input{
+    padding-left: 20px;
+    margin-left: 10px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    /* glassmorphism */
+    background: rgba( 255, 255, 255, 0.08 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: 15px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );  
+}
+
+#project form .a input:first-child{
+    width: 150px;
+    height: 40px;
+    border: 1px solid #000;
+}
+
+#project form .a input:last-child{
+    width: 300px;
+    height: 40px;
+}
+
+#project form input{
+    width: 80px;
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 60px;
+    border: 1px solid #000;
+    /* glassmorphism */
+    background: rgba( 255, 255, 255, 0.08 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: 15px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );  
+}
