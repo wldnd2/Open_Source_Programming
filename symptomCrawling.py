@@ -521,10 +521,10 @@ def back_symptoms(symptom):
         print(key, ": ", value)
     from elasticsearch import Elasticsearch
     import json
-    es_host="http://localhost:9200"
-    es = Elasticsearch(es_host)
-    error = None
-    es.index(index="back_symptons", document=dict_of_back_symptons)
+    # es_host="http://localhost:9200"
+    # es = Elasticsearch(es_host)
+    # error = None
+    # es.index(index="back_symptons", document=dict_of_back_symptons)
     if symptom not in dict_of_back_symptons.keys():
         return {}
     return dict_of_back_symptons[symptom]
