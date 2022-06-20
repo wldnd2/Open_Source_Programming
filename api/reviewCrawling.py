@@ -215,3 +215,43 @@ for coef in coef_pos_index[:20]:
 # 상위 20개 부정 형태소 출력
 for coef in coef_pos_index[-20:]:
     print(invert_index_vectorizer[coef[1]], coef[0])
+
+# 최종 결과 분석
+
+# 긍정!!!
+positive_noun_list = []
+positive_adjective_list = []
+
+# 명사, 형용사별로 계수가 높은 상위 10개의 형태소 추출
+for coef in coef_pos_index[:100]:
+    pos_category = invert_index_vectorizer[coef[1]].split("/")[1]
+    if pos_category == "Noun":
+        positive_noun_list.append((invert_index_vectorizer[coef[1]], coef[0]))
+    elif pos_category == "Adjective":
+        positive_adjective_list.append((invert_index_vectorizer[coef[1]], coef[0]))
+
+print("긍정적인 명사 리뷰:")
+for i in range(0,5):
+    print(positive_noun_list[i][0][:-5])
+print("긍정적인 형용사 리뷰:")
+for i in range(0,5):
+    print(positive_adjective_list[i][0][:-10])
+
+# 부정!!!
+negative_noun_list = []
+negative_sadjective_list = []
+
+# 명사, 형용사별로 계수가 높은 상위 10개의 형태소 추출
+for coef in coef_pos_index[-50:]:
+    pos_category = invert_index_vectorizer[coef[1]].split("/")[1]
+    if pos_category == "Noun":
+        negative_noun_list.append((invert_index_vectorizer[coef[1]], coef[0]))
+    elif pos_category == "Adjective":
+        negative_sadjective_list.append((invert_index_vectorizer[coef[1]], coef[0]))
+
+print("부정적인 명사 리뷰:")
+for i in range(0,5):
+    print(negative_noun_list[i][0][:-5])
+print("부정적인 형용사 리뷰:")
+for i in range(0,5):
+    print(negative_sadjective_list[i][0][:-10])
