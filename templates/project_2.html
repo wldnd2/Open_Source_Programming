@@ -113,6 +113,27 @@
                 </script>
                 {% endfor %}
                 <script>
+
+                    var positive = [];
+                    {% for i in pos %}
+                        var temp = "";
+                        {% for j in i %}
+                            temp += '{{j}}' + " ";
+                        {% endfor %}
+                        positive.push(temp);
+                    {% endfor %}
+                    console.log(positive);
+
+                    var negative = [];
+                    {% for i in neg %}
+                        var temp = "";
+                        {% for j in i %}
+                            temp += '{{j}}' + " ";
+                        {% endfor %}
+                        negative.push(temp);
+                    {% endfor %}
+                    console.log(negative);
+
                     console.log(word);
                     for (var i = 0; i < word.length; i++) {
                         var str = ".hos-info" + word[i];
@@ -129,6 +150,12 @@
                                 "</li>" +
                                 "<li> 주소: " +
                                 hospInfo[i][3] +
+                                "</li>" +
+                                "<li> 긍정적 리뷰: " +
+                                positive[i] +
+                                "</li>" +
+                                "<li> 부정적 리뷰: " +
+                                negative[i] +
                                 "</li>" +
                                 "</ul>";
                         console.log(htmlData);
