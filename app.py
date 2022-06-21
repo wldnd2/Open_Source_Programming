@@ -72,7 +72,7 @@ def result():
 				continue
 		except:
 			print("1error!!!!!!!!")
-			return render_template('project1.html')
+			return render_template('project_1.html')
 	# 결과값 없는 Diction 정리
 	for i in range(len(removeKey)):
 		del Diction[removeKey[i]]
