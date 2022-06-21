@@ -62,6 +62,7 @@ def result():
 				rnd = 0
 				temp = [key, list(Diction.values())[index][rnd]]
 			crawResult = mapCrawling.Crawler(temp[1])
+			print(crawResult)
 			index += 1
 			if len(crawResult) != 0:
 				rndIndex.append(rnd)
@@ -79,7 +80,10 @@ def result():
 	# 병원 정보 정리
 	hospInformations = []
 	# 받아온 지도 결과 값 출력
+	print("**********************")
+	print(r)
 	for i in range(len(r)):
+		print(r[i][rndIndex[i]])
 		hospInformations.append(r[i][rndIndex[i]][:4])
 		print(hospInformations[i])
 	p = []
