@@ -261,11 +261,11 @@ def reviewAnalysis(hospName):
                 positive_adjective_list.append((invert_index_vectorizer[coef[1]], coef[0]))
 
         print("긍정적인 명사 리뷰:")
-        for i in range(0,10):
+        for i in range(0,3):
             positive.append(positive_noun_list[i][0][:-5])
             print(positive_noun_list[i][0][:-5])
         print("긍정적인 형용사 리뷰:")
-        for i in range(0,10):
+        for i in range(0,3):
             positive.append(positive_adjective_list[i][0][:-10])
             print(positive_adjective_list[i][0][:-10])
             
@@ -281,11 +281,11 @@ def reviewAnalysis(hospName):
                 negative_sadjective_list.append((invert_index_vectorizer[coef[1]], coef[0]))
 
         print("부정적인 명사 리뷰:")
-        for i in range(0,10):
+        for i in range(0,3):
             negative.append(negative_noun_list[i][0][:-5])
             print(negative_noun_list[i][0][:-5])
         print("부정적인 형용사 리뷰:")
-        for i in range(0,10):
+        for i in range(0,3):
             negative.append(negative_sadjective_list[i][0][:-10])
             print(negative_sadjective_list[i][0][:-10])
         return positive, negative
@@ -295,4 +295,3 @@ def reviewAnalysis(hospName):
         p.append(sentence)
         n.append(sentence)
         return p, n
-        
