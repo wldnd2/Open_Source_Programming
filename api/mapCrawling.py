@@ -2,7 +2,9 @@ import time
 import requests
 from selenium import webdriver
 from bs4 import BeautifulSoup
-from selenium.webdriver import FirefoxOptions
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 def extract_hospital(html, browser, index):
     #-------------------------------
@@ -66,7 +68,8 @@ def Crawler(hostType):
     # browser.get(final_url)
     options = webdriver.ChromeOptions()
     options.add_argument("headless")
-    browser = webdriver.Chrome("./chromedriver.exe", chrome_options= options)
+    browser = webdriver.Chrome("./chromedriver.exe", chrome_options=options)
+    # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
     browser.get(final_url)
     # 목록보기 클릭
     button = browser.find_element_by_class_name("_31ySW ")

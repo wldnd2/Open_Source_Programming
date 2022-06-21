@@ -13,8 +13,8 @@ import time
 import requests
 from selenium import webdriver
 from bs4 import BeautifulSoup
-from selenium.webdriver.firefox.options import Options
-from selenium.webdriver import FirefoxOptions
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 
 import re
@@ -36,7 +36,7 @@ def reviewAnalysis(hospName):
     # browser.get(final_url)
     options = webdriver.ChromeOptions()
     options.add_argument("headless")
-    driver = webdriver.Chrome("./chromedriver.exe", chrome_options= options)
+    driver = webdriver.Chrome("./chromedriver.exe", options= chrome_options)
     source_url = "https://map.kakao.com/"
     driver.get(source_url)
 

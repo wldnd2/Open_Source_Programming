@@ -2,6 +2,10 @@
 
 read -p "루트 권한 패스워드를 입력해주세요 : " PW
 
+
+pip freeze > requirements.txt
+echo "$PW" | sudo -kS pip install -r requirements.txt
+
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 echo "$PW" | sudo -kS apt install ./google-chrome-stable_current_amd64.deb
 chmod 700 execute.sh
