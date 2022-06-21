@@ -13,12 +13,12 @@ pip3 install selenium
 pip3 install seaborn
 pip3 install sklearn
 
+chmod +x execute.sh
+gnome-terminal -e ./execute.sh
 cd ..
 cd elasticsearch-8.2.0
-./bin/elasticsearch -d
-cd ..
-cd Open_Source_Programming
+./bin/elasticsearch
+echo "elasticsearch!!!!!!!!!!!!!!!"
+curl -XDELETE localhost:9200/*
 
-chmod 700 geckodriver
-chmod +x app.py
-python3 app.py
+
