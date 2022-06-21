@@ -44,7 +44,7 @@ def result():
 		return render_template('project1.html')
 
 
-	# Diction = {'알코올성 간질환(Alcoholic liver disease)': ['소화기내과'],'간질환(Alcoholic liver disease)': ['소화기내과']}
+	# Diction = {'VDT 증후군(Visual Display Terminal Syndrome)': ['정형외과'], '경추 추간판 탈출증(Cervical HIVD)': ['신경외과', '정형외과'], '다발성 신경병증(Polyneuropathy)': ['신경과'], '당뇨병(Diabetes mellitus)': ['가정의학과', '내분비내과', '노년내과', '신ㆍ췌장이식외과']}
 	r = []
 	index = 0
 	sym = []
