@@ -34,11 +34,13 @@ def result():
 			Diction = back_symptoms(sym)
 		elif part=="엉덩이":
 			Diction = hip_symptoms(sym)
+			print(Diction)
 		elif part=="팔":
 			Diction = arm_symptoms(sym)
 		elif part=="다리":
 			Diction = leg_symptoms(sym)
 	except:
+		print("1error!!!!!!!!")
 		return render_template('project1.html')
 
 
@@ -69,6 +71,7 @@ def result():
 				removeKey.append(key)
 				continue
 		except:
+			print("1error!!!!!!!!")
 			return render_template('project1.html')
 	# 결과값 없는 Diction 정리
 	for i in range(len(removeKey)):
