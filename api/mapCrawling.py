@@ -68,8 +68,8 @@ def Crawler(hostType):
     # browser.get(final_url)
     options = webdriver.ChromeOptions()
     options.add_argument("headless")
-    browser = webdriver.Chrome("./chromedriver.exe", chrome_options=options)
-    # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+    # browser = webdriver.Chrome("./chromedriver.exe", chrome_options=options)
+    browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()), chrome_options=options)
     browser.get(final_url)
     # 목록보기 클릭
     button = browser.find_element_by_class_name("_31ySW ")

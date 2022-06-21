@@ -13,6 +13,7 @@ google-chrome --version
 
 
 echo "$PW" | sudo -kS apt install software-properties-common
+chmod +x chromedriver
 
 pip install --upgrade pip
 pip install webdriver-manager
