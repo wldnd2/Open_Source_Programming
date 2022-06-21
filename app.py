@@ -21,28 +21,28 @@ def result():
 	part = request.form['part']
 	sym = request.form['sym']
 	
-	# try:
-	# 	if part=="배":
-	# 		Diction = stomach_symptoms(sym)
-	# 	elif part=="머리":
-	# 		Diction = head_symptoms(sym)
-	# 	elif part=="목":
-	# 		Diction = neck_symptoms(sym)
-	# 	elif part=="가슴":
-	# 		Diction = chest_symptoms(sym)
-	# 	elif part=="등":
-	# 		Diction = back_symptoms(sym)
-	# 	elif part=="엉덩이":
-	# 		Diction = hip_symptoms(sym)
-	# 	elif part=="팔":
-	# 		Diction = arm_symptoms(sym)
-	# 	elif part=="다리":
-	# 		Diction = leg_symptoms(sym)
-	# except:
-	# 	return render_template('project1.html')
+	try:
+		if part=="배":
+			Diction = stomach_symptoms(sym)
+		elif part=="머리":
+			Diction = head_symptoms(sym)
+		elif part=="목":
+			Diction = neck_symptoms(sym)
+		elif part=="가슴":
+			Diction = chest_symptoms(sym)
+		elif part=="등":
+			Diction = back_symptoms(sym)
+		elif part=="엉덩이":
+			Diction = hip_symptoms(sym)
+		elif part=="팔":
+			Diction = arm_symptoms(sym)
+		elif part=="다리":
+			Diction = leg_symptoms(sym)
+	except:
+		return render_template('project1.html')
 
 
-	Diction = {'알코올성 간질환(Alcoholic liver disease)': ['소화기내과'],'간질환(Alcoholic liver disease)': ['소화기내과']}
+	# Diction = {'알코올성 간질환(Alcoholic liver disease)': ['소화기내과'],'간질환(Alcoholic liver disease)': ['소화기내과']}
 	r = []
 	index = 0
 	sym = []
