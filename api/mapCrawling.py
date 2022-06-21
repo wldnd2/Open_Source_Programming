@@ -68,7 +68,12 @@ def Crawler(hostType):
     # browser.get(final_url)
     options = webdriver.ChromeOptions()
     options.add_argument("headless")
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument("--disable-setuid-sandbox")
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
     # browser = webdriver.Chrome("./chromedriver.exe", chrome_options=options)
+    # browser = webdriver.Chrome(executable_path= './chromedriver.exe', chrome_options=options)
     browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()), chrome_options=options)
     browser.get(final_url)
     # 목록보기 클릭

@@ -2,7 +2,7 @@
 
 read -p "루트 권한 패스워드를 입력해주세요 : " PW
 
-
+echo "$PW" | sudo -kS apt-get update
 pip freeze > requirements.txt
 echo "$PW" | sudo -kS pip install -r requirements.txt
 

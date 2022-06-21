@@ -36,7 +36,12 @@ def reviewAnalysis(hospName):
     # browser.get(final_url)
     options = webdriver.ChromeOptions()
     options.add_argument("headless")
-    driver = webdriver.Chrome("./chromedriver.exe", options= chrome_options)
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument("--disable-setuid-sandbox")
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    # driver = webdriver.Chrome(executable_path= './chromedriver.exe', chrome_options=options)
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), chrome_options=options)
     source_url = "https://map.kakao.com/"
     driver.get(source_url)
 
