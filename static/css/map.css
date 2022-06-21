@@ -1,0 +1,8 @@
+.contents{
+    padding-left: 100px;
+    overflow-y: scroll;
+}
+
+#map-box{
+    margin-left: 20px;
+}

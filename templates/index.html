@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSP_project</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/list.css">
+</head>
+<body>
+    <div class="container">
+        <!-- side menu items -->
+        <div class="navigation">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="../static/images/logo.jpg" alt="">
+                    <h2>OSP</h2>
+                </a>
+            </div>
+            <ul>
+                <li class="list active">
+                    <b></b>
+                    <b></b>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <b></b>
+                    <b></b>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Team</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <b></b>
+                    <b></b>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="analytics-outline"></ion-icon>
+                        </span>
+                        <span class="title">Project</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <b></b>
+                    <b></b>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>                    
+                        </span>
+                        <span class="title">Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="contents">
+            <!-- 홈 -->
+            <div class="showBox active", id="home">
+                <div class="circle"></div>
+                <div class="home-contents">
+                    <h2>병원 추천 서비스</h2>
+                    <p class="description">저희 웹 사이트는 자신의 증상에 대한 예상 병명을 알려주고,<br>주위 병원을 추천해주는 서비스입니다.</p>
+                    <p class="site">
+                        주요 크롤링 사이트(링크) : 
+                        <a href="https://www.amc.seoul.kr/asan/healthinfo/symptom/symptomSubmain.do" target="_blank" >서울 아산병원</a>,
+                        <a href="https://map.naver.com/" target="_blank" >네이버 지도</a>
+                    </p>
+                </div>
+                <div class="mainIMG"><img src="../static/images/main_image.png" alt=""></div>
+            </div>
+            <!-- 팀 -->
+            <div class="showBox" id="team">
+                <div class="circle"></div>
+                <div class="team-contents">
+                    <!-- 1번카드 -->
+                    <div class="card">
+                        <div class="img-box">
+                            <img src="../static/images/IMG_1451.PNG" alt="">
+                        </div>
+                        <div class="content-box">
+                            <div class="main">
+                                <h2>전지웅</h2>
+                                <a href="https://github.com/wldnd2" target="_blank">
+                                    <ion-icon name="logo-github"></ion-icon>
+                                </a>
+                            </div>
+                            <div class="information">
+                                <p>학번 : 2019112912</p>
+                                <p>맡은 부분</p>
+                                <ul>
+                                    <li>1. 웹(html & css) 디자인</li>
+                                    <li>2. 네이버지도 크롤링</li>
+                                    <li>3. 카카오맵 리뷰 크롤링 및 형태소 분석</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2번카드 -->
+                    <div class="card">
+                        <div class="img-box">
+                            <img src="../static/images/hyo.png" alt="">
+                        </div>
+                        <div class="content-box">
+                            <div class="main">
+                                <h2>이효은</h2>
+                                <a href="https://github.com/Hyoeunkh" target="_blank">
+                                    <ion-icon name="logo-github"></ion-icon>
+                                </a>
+                            </div>
+                            <div class="information">
+                                <p>학번 : 2021112602</p>
+                                <p>맡은 부분</p>
+                                <ul>
+                                    <li>1. flask 파일</li>
+                                    <li>2. 쉘 스크립트</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3번카드 -->
+                    <div class="card">
+                        <div class="img-box">
+                            <img src="../static/images/dong.png" alt="">
+                        </div>
+                        <div class="content-box">
+                            <div class="main">
+                                <h2>김동윤</h2>
+                                <a href="https://github.com/seawweed" target="_blank">
+                                    <ion-icon name="logo-github"></ion-icon>
+                                </a>
+                            </div>
+                            <div class="information">
+                                <p>학번 : 2019113453</p>
+                                <p>맡은 부분</p>
+                                <ul>
+                                    <li>1. 아산병원 부위별 크롤링</li>
+                                    <li>2. 크롤링 데이터 엘라스틱 서치 담당</li>
+                                    <li>3. 보고서 작성</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 4번카드 -->
+                    <div class="card">
+                        <div class="img-box">
+                            <img src="../static/images/min.png" alt="">
+                        </div>
+                        <div class="content-box">
+                            <div class="main">
+                                <h2>이정민</h2>
+                                <a href="https://github.com/min1018" target="_blank">
+                                    <ion-icon name="logo-github"></ion-icon>
+                                </a>
+                            </div>
+                            <div class="information">
+                                <p>학번 : 2021115223</p>
+                                <p>맡은 부분</p>
+                                <ul>
+                                    <li>1. 지도 웹 시각화</li>
+                                    <li>2. flask 지도 return</li>
+                                    <li>3. 보고서 작성</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 프로젝트 -->
+            <div class="showBox" id="project">
+                <div class="circle"></div>
+                <div class="sick-contents"> 
+                    <ul class="head">
+                        <h2>머리</h2>
+                        <li> 간성 뇌증</li>
+                        <li> 강박증 </li>
+                        <li> 건망증 </li>
+                        <li> 기민 상태</li>
+                        <li> 기억장애</li>
+                        <li> 깨어나면 기억하지 못한</li>
+                        <li> 납작한 코, 출 쳐진 귀</li>
+                        <li> 낮 시간대의 졸음</li>
+                        <li> 낮은 지능</li>
+                        <li> 낮은 학업 성취</li>
+                        <li> 놀림반사의 약화</li>
+                        <li> 뇌압 상승 증상</li>
+                        <li> 뇌염증상</li>
+                        <li> 뇌출혈</li>
+                        <li> 달 모양의 둥근 얼굴</li>
+                        <li> 두통</li>
+                        <li> 두피 건조</li>
+                        <li> 만성 부비동염</li>
+                        <li> 모발 탈색</li>
+                        <li> 모발이 가늘어짐</li>
+                        <li> 무의식</li>
+                        <li> 박동성 통증</li>
+                        <li> 방향 감각의 상실</li>
+                        <li> 볼, 눈 주위 움푹 꺼짐</li>
+                        <li> 비웃는 듯한 표정</li>
+                        <li> 삐뚤어진 눈, 코, 입</li>
+                        <li> 수막자극증상</li>
+                        <li> 실언증</li>
+                        <li> 실행증</li>
+                        <li> 안면 변형</li>
+                        <li> 안면마비</li>
+                        <li> 안면부 출형</li>
+                        <li> 안면통</li>
+                        <li> 안면 홍조</li>
+                        <li> 어지러움</li>
+                        <li> 언어 장애</li>
+                        <li> 얼굴 중심선이 안맞음</li>
+                        <li> 얼굴 한쪽의 반점</li>
+                        <li> 얼굴 모양 변화</li>
+                        <li> 얼굴 부종</li>
+                        <li> 얼굴에 털이 자람</li>
+                        <li> 얼굴의 나비모양 홍반</li>
+                        <li> 얼굴이 화끈거림</li>
+                        <li> 얼굴 형태의 이상</li>
+                        <li> 운동 실어증</li>
+                        <li> 원형, 타원형의 탈모</li>
+                        <li> 의식 저하</li>
+                        <li> 이마가 넓어짐</li>
+                        <li> 이중턱</li>
+                        <li> 인지장애</li>
+                        <li> 풀림</li>
+                        <li> 지남력 장애</li>
+                        <li> 치매</li>
+                        <li> 코 옆과 입꼬리 주름</li>
+                        <li> 턱의 통증</li>
+                        <li> 편두통</li>
+                        <li> 하약전돌</li>
+                        <li> 학습장애</li>
+                        <li> 혼돈</li>
+                        <li> 혼수</li>
+                    </ul>
+                    <ul class="chest">
+                        <h2>가슴</h2>
+                        <li> 가래</li>
+                        <li> 가슴 답답</li>
+                        <li> 가슴 두근거림</li>
+                        <li> 가슴 통증</li>
+                        <li> 객혈</li>
+                        <li> 거품이 섞인 가래</li>
+                        <li> 검은색 가래</li>
+                        <li> 겨드랑이 악취</li>
+                        <li> 과호흡</li>
+                        <li> 기침</li>
+                        <li> 녹막심출</li>
+                        <li> 무호흡</li>
+                        <li> 반복되는 폐렴</li>
+                        <li> 부정맥</li>
+                        <li> 불규칙 호흡</li>
+                        <li> 빈맥</li>
+                        <li> 반호흡</li>
+                        <li> 사래걸림</li>
+                        <li> 새가슴</li>
+                        <li> 서맥</li>
+                        <li> 서호흡</li>
+                        <li> 수면 무호흡</li>
+                        <li> 숨막히는 느낌</li>
+                        <li> 심근손상</li>
+                        <li> 심방 부정맥</li>
+                        <li> 심부전</li>
+                        <li> 심실 부정맥</li>
+                        <li> 심실세동</li>
+                        <li> 심음 감소</li>
+                        <li> 심인성 쇼크</li>
+                        <li> 심잡음</li>
+                        <li> 심정지</li>
+                        <li> 운동 시 호흡곤란</li>
+                        <li> 울혈성 심부전</li>
+                        <li> 잦은 딸꾹질</li>
+                        <li> 저심박출량</li>
+                        <li> 질식</li>
+                        <li> 천명음</li>
+                        <li> 천식</li>
+                        <li> 폐기능 저하</li>
+                        <li> 폐동맥 고혈압</li>
+                        <li> 폐부종</li>
+                        <li> 폐색전</li>
+                        <li> 폐출혈</li>
+                        <li> 함몰가슴</li>
+                        <li> 헛기침</li>
+                        <li> 호기의 증가</li>
+                        <li> 호흡곤란</li>
+                        <li> 호흡기감염</li>
+                        <li> 화농성 객담</li>
+                        <li> 흉곽 팽윤</li>
+                        <li> 흉부 압박감</li>
+                        <li> 흉쇄 유돌근의 몽우리</li>
+                        <li> 흉수</li>
+                    </ul> 
+                    <ul class="arm">
+                        <h2>팔</h2>
+                        <li> 가늘어지는 팔다리</li>
+                        <li> 관절 운동성 감소</li>
+                        <li> 관절의 경직</li>
+                        <li> 관절통</li>
+                        <li> 다발성 관절염</li>
+                        <li> 동정맥루 잡음 약화</li>
+                        <li> 말초부종</li>
+                        <li> 말초의 허혈</li>
+                        <li> 무감각</li>
+                        <li> 무맥</li>
+                        <li> 반신마비</li>
+                        <li> 방사통</li>
+                        <li> 뼈의변형</li>
+                        <li> 사지 마비</li>
+                        <li> 사지 부종</li>
+                        <li> 사지의 창백한 현상</li>
+                        <li> 상자 마비</li>
+                        <li> 손상 부위 출혈</li>
+                        <li> 손상부위 촉각 손실</li>
+                        <li> 압통</li>
+                        <li> 어깨 움직임의 제한</li>
+                        <li> 어깨 잡음</li>
+                        <li> 어깨근육 약화</li>
+                        <li> 어깨의 통증</li>
+                        <li> 옷 액와 부분 변색</li>
+                        <li> 저림</li>
+                        <li> 파열 부위 오목해짐</li>
+                        <li> 팔의 길이가 달라짐</li>
+                        <li> 팔의 통증</li>
+                        <li> 편마비</li>
+                        <li> 펼측 사지의 감각소실</li>
+                    </ul>
+                    <ul class="back">
+                        <h2>등</h2>
+                        <li> 관절통</li>
+                        <li> 굽은 등</li>
+                        <li> 뼈의 기형</li>
+                        <li> 요통</li>
+                        <li> 자세이상</li>
+                        <li> 척추 후만</li>
+                        <li> 척추와 허리 디스크</li>
+                    </ul>
+                    <ul class="hip">
+                        <h2>엉덩이</h2>
+                        <li> 괄약근 기능 이상</li>
+                        <li> 달걀 위에 앉아있는 느낌</li>
+                        <li> 대변에 벌레 관찰됨</li>
+                        <li> 배변습관의 변화</li>
+                        <li> 배변장애</li>
+                        <li> 변비</li>
+                        <li> 변실금</li>
+                        <li> 설사</li>
+                        <li> 악취가 나는 설사</li>
+                        <li> 엉덩이 통증</li>
+                        <li> 점액변</li>
+                        <li> 지방변</li>
+                        <li> 지핵의 탈출</li>
+                        <li> 항문 통증</li>
+                        <li> 항문주위 염증</li>
+                        <li> 항문 출혈</li>
+                        <li> 혈변</li>
+                        <li> 회색변</li>
+                        <li> 흑색변</li>
+                    </ul>
+                    <ul class="leg">
+                        <h2>다리</h2>
+                        <li> O자 다리</li>
+                        <li> X자 다리</li>
+                        <li> 가늘어지는 팔다리</li>
+                        <li> 관저 불안정증</li>
+                        <li> 광절 운동성 감소</li>
+                        <li> 관절염</li>
+                        <li> 관절의 경직</li>
+                        <li> 관절 잡음</li>
+                        <li> 관절통</li>
+                        <li> 다리 통증</li>
+                        <li> 다리가 잘 안 벌어짐</li>
+                        <li> 다리변형</li>
+                        <li> 다리의 길이가 틀림</li>
+                        <li> 다발성 관절염</li>
+                        <li> 마초부종</li>
+                        <li> 말초의 허혈</li>
+                        <li> 무감각</li>
+                        <li> 무릎 부위 부종</li>
+                        <li> 무릎 부위 통증</li>
+                        <li> 무맥</li>
+                        <li> 반신마비</li>
+                        <li> 방사통</li>
+                        <li> 보행이상</li>
+                        <li> 뻣뻣함</li>
+                        <li> 뼈의 기형</li>
+                        <li> 뼈의 변형</li>
+                        <li> 사지마비</li>
+                        <li> 사지 부종</li>
+                        <li> 사지의 창백한 현성</li>
+                        <li> 손상 부위 출혈</li>
+                        <li> 손상부위의 촉각 소실</li>
+                        <li> 압통</li>
+                        <li> 양무릎사이 벌어짐</li>
+                        <li> 양반다리로 앚기 힘듬</li>
+                        <li> 오리 걸음</li>
+                        <li> 저림</li>
+                        <li> 정맥혈전</li>
+                        <li> 종아리 근육의 비대</li>
+                        <li> 파열 부위 오목해짐</li>
+                        <li> 파열음</li>
+                        <li> 파행</li>
+                        <li>  편마비</li>
+                        <li>  편측 사지의 감각소실</li>
+                        <li>  하지 마비</li>
+                        <li>  하지부종</li>
+                        <li>  하지의 근력 약화</li>
+                    </ul>
+                    <ul class="neck">
+                        <h2>목</h2>
+                        <li> 갑상선 비대</li>
+                        <li> 갑상선이 단단해짐</li>
+                        <li> 경부 강직</li>
+                        <li> 경부 림프절병증</li>
+                        <li> 경부 운동 제한</li>
+                        <li> 경정맥 확장</li>
+                        <li> 고음에서의 분열</li>
+                        <li> 남성스러운 목소리</li>
+                        <li> 덩어리가 만져짐</li>
+                        <li> 목 뒷부분의 지방축적</li>
+                        <li> 목 주변 부종</li>
+                        <li> 목소리 변화</li>
+                        <li> 목의 이물감</li>
+                        <li> 목의 통증</li>
+                        <li> 사경</li>
+                        <li> 삼키기 곤란</li>
+                        <li> 성대 이상</li>
+                        <li> 성대 마비</li>
+                        <li> 음성 피로</li>
+                        <li> 이물감</li>
+                        <li> 이중음성</li>
+                        <li> 잦은 상기도 감염</li>
+                        <li> 지속적인 애성</li>
+                        <li> 편도선 비대</li>
+                    </ul>
+                    <ul class="stomach">
+                        <h2>배</h2>
+                        <li> 가슴 쓰림</li>
+                        <li> 간기능 저하</li>
+                        <li> 간부전</li>
+                        <li> 간비대</li>
+                        <li> 공복감</li>
+                        <li> 구토</li>
+                        <li> 급성 신부전</li>
+                        <li> 농신증</li>
+                        <li> 담도감염</li>
+                        <li> 담석</li>
+                        <li> 덩어리가 만져짐</li>
+                        <li> 만성 신부전</li>
+                        <li> 문백성고혈압</li>
+                        <li> 배꼽의 고름 및 피</li>
+                        <li> 배꼽이 솟음</li>
+                        <li> 복벽이 움푹 들어감</li>
+                        <li> 복부 불편감</li>
+                        <li> 복부 압박 증상</li>
+                        <li> 복부 통증</li>
+                        <li> 복부경련</li>
+                        <li> 복부비만</li>
+                        <li> 복부의 박동감</li>
+                        <li> 복부팽만감</li>
+                        <li> 복수</li>
+                        <li> 분출성 구토</li>
+                        <li> 비장비대</li>
+                        <li> 산통</li>
+                        <li> 소화불량</li>
+                        <li> 손가락으로 밀면 들어감</li>
+                        <li> 식후 불쾌감</li>
+                        <li> 십이지장궤양</li>
+                        <li> 아랫배가 뭉침</li>
+                        <li> 악취</li>
+                        <li> 압통</li>
+                        <li> 야뇨증</li>
+                        <li> 양수의 감소</li>
+                        <li> 옆구리 통증</li>
+                        <li> 오심</li>
+                        <li> 위게양</li>
+                        <li> 위염</li>
+                        <li> 위의 연동운동이 보임</li>
+                        <li> 위장관 출혈</li>
+                        <li> 위장관의 허혈</li>
+                        <li> 임신 오조증</li>
+                        <li> 잔변감</li>
+                        <li> 장마비</li>
+                        <li> 장폐색</li>
+                        <li> 초록색 구토</li>
+                        <li> 탈장</li>
+                        <li> 탈장 돌출</li>
+                        <li> 탈장 부위의 통증</li>
+                        <li> 토혈</li>
+                        <li> 트림</li>
+                        <li> 포만감</li>
+                        <li> 헛배</li>
+                        <li> 흡수장애</li>
+                    </ul>
+                </div>
+                <form method="POST" action="/project_2">
+                    <div class="a">
+                        <input name="part" type="text" placeholder="부위를 입력해주세요!">
+                        <input name="sym" type="text" placeholder="증상을 입력해주세요!">
+                    </div>
+                    <input type="submit" name="send" value="Send" > <br>
+                </form>
+            </div>
+            <!-- 연락처 -->
+            <div class="showBox" id="contact">
+                <div class="circle"></div>
+                <div class="contact-contents">
+                    <h2>Email List</h2>
+                    <div class="email-list">
+                        <ul>
+                            <li>
+                                <h3>전지웅:</h3>
+                                <p>jun000628@naver.com</p>
+                            </li>
+                            <li>
+                                <h3>이효은:</h3>
+                                <p>00000@naver.com</p>
+                            </li>
+                            <li>
+                                <h3>김동윤:</h3>
+                                <p>00000@naver.com</p>
+                            </li>
+                            <li>
+                                <h3>이정민:</h3>
+                                <p>meat214ba@naver.com</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="contactIMG"><img src="../static/images/contact_image.png" alt=""></div>
+            </div>
+        </div>     
+    </div>
+    <!-- incon js -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- main js -->
+    <script>
+        let list = document.querySelectorAll('.list');
+        let list2 = document.querySelectorAll('.showBox');
+        for (let i = 0; i < list.length; i++) {
+            list[i].onclick = function () {
+                let j = 0;
+                while (j < list.length) {
+                    list[j].className = 'list';
+                    list2[j++].className = 'showBox';
+                }
+                list[i].className = 'list active';
+                list2[i].className = 'showBox active';
+            }
+        }
+    </script>
+</body>
+</html>

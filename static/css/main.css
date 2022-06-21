@@ -1,0 +1,553 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Black Han Sans", sans-serif;
+}
+
+:root{
+    --background: #fff;
+}
+
+body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+.container{
+    position: relative;
+    width: 95%;
+    height: 95vh;
+    background: var(--background);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.navigation {
+    position: fixed;
+    top: 2vh;
+    left: 20px;
+    bottom: 20px;
+    /* width: 200px; */
+    width: 12%;
+    height: 96vh;
+    border-radius: 20px;
+    box-sizing: initial;
+    border-left: 5px solid #4d5bf9;
+    background: #4d5bf9;
+}
+
+.navigation .logo a{
+    position: absolute;
+    left: -20px;
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navigation .logo a img {
+    width: 20%;
+    height: 40%;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+.navigation .logo a h2 {
+    position: relative;
+    top: 4px;
+    font-size: 2em;
+    color: #fff;
+}
+
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 250px;
+}
+
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.navigation ul li.active{
+    /* background-color: #fff; */
+    background: var(--background);
+}
+
+/* ================================================================= */
+.navigation ul li b:nth-child(1){
+    position: absolute;
+    top: -20px;
+    height: 20px;
+    width: 100%;
+    /* background: #fff; */
+    background: var(--background);
+    display: none;
+}
+
+.navigation ul li b:nth-child(1)::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 20px;
+    background: #4d5bf9;
+}
+
+.navigation ul li b:nth-child(2){
+    position: absolute;
+    bottom: -20px;
+    height: 20px;
+    width: 100%;
+    /* background: #fff; */
+    background: var(--background);
+    display: none;
+}
+
+.navigation ul li b:nth-child(2)::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 20px;
+    background: #4d5bf9;
+}
+
+.navigation ul li.active b:nth-child(1),
+.navigation ul li.active b:nth-child(2){
+    display: block;
+}
+/* ================================================================= */
+
+.navigation ul li a{
+    position: relative;
+    top: 5px;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navigation ul li.active a{
+    color: #333;
+}
+
+.navigation ul li.active a{
+    color: #333;
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.navigation ul li a .icon ion-icon{
+    font-size: 1.5em;
+}
+
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 50px;
+    white-space: normal;
+}
+
+.contents{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* left: 170px; */
+    left: 11%;
+    overflow: hidden;
+    padding: 40px 10px;
+}
+
+/* 원페이지로 만들어 주는 css */
+.showBox{
+    display:none;
+}
+
+.showBox.active{
+    display:block;
+}
+
+/* 메인 화면 홈 css - contents */
+#home{
+    width: 100%;
+    height: 100%;
+}
+
+#home .circle{
+    background: #7e88f4;
+    position: absolute;
+    right: -80px;
+    top: -350px;
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+}
+
+#home .mainIMG{
+    position: absolute;
+    bottom: 30px;
+    right: 410px;
+    width: 400px;
+    height: 400px;
+}
+
+#home .home-contents{
+    position: relative;
+    top: 20px;
+    left: 50px;
+    width: 83%;
+    height: 90%;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    /* glassmorphism */
+    background: rgba( 255, 255, 255, 0.08 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: 15px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#home .home-contents h2{
+    font-size: 4rem;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+#home .home-contents h2::before{
+    transition: all .5s;
+    content: "";
+    position: absolute;
+    top: 300px;
+    left: 40px;
+    width: 440px;
+    height: 3px;
+    background: #000;
+    opacity: 0;
+}
+
+#home .home-contents:hover h2::before{
+    opacity: 1;
+}
+
+#home .home-contents .description{
+    font-size: 1.8rem;
+    margin-bottom: 50px;
+}
+
+#home .home-contents .site {
+    font-size: 1.2rem;
+}
+
+#home .home-contents .site a{
+    text-decoration: none;
+    color: #5b67eb;
+}
+
+/* 메인 화면 팀 css - contents */
+#team{
+    width: 100%;
+    height: 100%;
+}
+
+#team .circle{
+    background: #7e88f4;
+    position: absolute;
+    right: -80px;
+    top: -350px;
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+}
+
+
+#team .team-contents{
+    position: relative;
+    left: 50px;
+    width: 83%;
+    height: 100%;
+    padding: 60px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* glassmorphism */
+    background: rgba( 255, 255, 255, 0.08 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 15px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#team .team-contents .card{
+    position: relative;
+    width: 350px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    padding: 5px 5px;
+    overflow: hidden;
+     /* glassmorphism */
+    background: rgba( 255, 255, 255, 0.08 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: 15px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    transition: all .5s;
+}
+
+#team .team-contents .card .img-box{
+    position: relative;
+    /* top: 20px; */
+    width: 200px;
+    height: 200px;
+    margin: 10px 20px;
+    /* center지정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* glassmorphism */
+    background: rgba( 255, 255, 255, 0.08 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 15px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#team .team-contents .card .img-box img{
+    width: 90%;
+    height: 90%;
+}
+
+#team .team-contents .card .content-box{
+    width: 200px;
+    height: 80px;
+    margin-top: 30px;
+    /* center지정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* glassmorphism */
+    background: rgba( 255, 255, 255, 0.08 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: 15px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    transition: all .3s ;
+}
+
+#team .team-contents .card .content-box .main{
+    position: absolute;
+    top: 300px;
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .3s ;
+}
+
+#team .team-contents .card .content-box .main h2{
+    font-size: 2.5rem;
+    transition: all .3s ;
+}
+
+#team .team-contents .card .content-box .main a{
+    font-size: 2.4rem;
+    text-decoration: none;
+    color: #000;
+    transition: all .3s ;
+}
+
+#team .team-contents .card .content-box .information{
+    opacity: 0;
+    transition: all .3s;
+    transition-delay: .2s;
+}
+
+#team .team-contents .card .content-box .information p{
+    font-size: 0;
+    transition: all .3s ;
+}
+
+#team .team-contents .card .content-box .information ul{
+    font-size: 0;
+    transition: all .3s ;
+}
+
+/* hover 적용 */
+#team .team-contents .card:hover{
+    position: relative;
+    width: 450px;
+    height: 560px
+}
+
+#team .team-contents .card:hover .content-box{
+    width: 250px;
+    height: 200px;
+    margin-top: 15px;
+}
+
+#team .team-contents .card:hover .content-box .main h2{
+    font-size: 1.5rem;
+}
+
+#team .team-contents .card:hover .content-box .main a{
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #000;
+}
+
+
+#team .team-contents .card:hover .content-box .information{
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+#team .team-contents .card:hover .content-box .information p{
+    font-size: 1.4rem;
+}
+
+#team .team-contents .card:hover .content-box .information ul{
+    padding-left: 20px;
+    font-size: 1.2rem;
+}
+
+/* 메인 화면 플젝 css - contents */
+/* 메인 화면 연락처 css - contents */
+#contact{
+    width: 90%;
+    height: 100%;
+}
+
+#contact .circle{
+    background: #7e88f4;
+    position: absolute;
+    right: -80px;
+    top: -350px;
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+}
+
+#contact .contactIMG{
+    position: absolute;
+    bottom: 0px;
+    right: 180px;
+    width: 400px;
+    height: 400px;
+}
+
+#contact .contactIMG img{
+    width: 100%;
+    height: 100%;
+}
+
+#contact .contact-contents{
+    position: relative;
+    top: 40px;
+    left: 90px;
+    width: 85%;
+    height: 85%;
+    padding: 60px 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    overflow: hidden;
+    /* glassmorphism */
+    background: rgba( 255, 255, 255, 0.08 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 15px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#contact .contact-contents h2{
+    font-size: 3rem;
+    letter-spacing: 3px;
+    padding: 10px 105px;
+    /* glassmorphism */
+    background: rgba( 255, 255, 255, 0.08 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 15px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#contact .contact-contents ul{
+    width: 700px;
+    height: 300px;
+    list-style: none;
+    /* glassmorphism */
+    background: rgba( 255, 255, 255, 0.08 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 15px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#contact .contact-contents ul li{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 28px;
+}
+
+#contact .contact-contents ul li h3{
+    font-size: 2rem;
+    margin-right: 20px;
+}
+
+#contact .contact-contents ul li p{
+    font-size: 2rem;
+}
